@@ -1,0 +1,119 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+
+}
+html{
+	scroll-behavior: smooth;
+};
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+  display: flex;
+  justify-content: center;
+	list-style: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.section {
+	padding: 40px 0;
+}
+
+.section h2 {
+	margin-top: 0;
+}
+
+.project {
+	margin-bottom: 40px;
+}
+
+
+.project h3 {
+	margin-top: 0;
+}
+
+form label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+	padding: 10px;
+	margin-bottom: 20px;
+	display: block;
+	width: 100%;
+	border: none;
+	border-radius: 5px;
+}
+
+form textarea {
+	height: 200px;
+}
+
+form input[type="submit"] {
+	background-color: #e4b527b7;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.container {
+		padding: 10px;
+	}
+
+	form input[type="text"],
+	form input[type="email"],
+	form textarea {
+		padding: 5px;
+		margin-bottom: 10px;
+	}
+
+	form textarea {
+		height: 100px;
+	}
+
+	form input[type="submit"] {
+		padding: 5px 10px;
+	}
+}
