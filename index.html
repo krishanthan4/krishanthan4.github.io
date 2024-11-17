@@ -10,6 +10,69 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+    <style>
+        /* Tooltip container */
+.tooltip {
+position: relative;
+display: inline-block;
+}
+
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 35%;
+background-color: rgba(0, 0, 0, 0.548);
+color: #fff;
+padding: 5px 0;
+top: 100%;
+  left: 35%;
+  margin-top: 5px;
+  border-radius: 6px;
+position: absolute;
+z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+
+.tooltip2 {
+position: relative;
+display: inline-block;
+}
+
+.tooltip2 .tooltiptext2 {
+visibility: hidden;
+width: 80%;
+background-color: rgba(0, 94, 94, 0.904);
+color: #fff;
+padding: 5px 0;
+top: 100%;
+  left: 35%;
+  padding: 5px;
+  margin-top: 5px;
+  border-radius: 6px;
+position: absolute;
+z-index: 1;
+}
+
+.tooltip2:hover .tooltiptext2 {
+visibility: visible;
+}
+
+      @media (min-width: 1300px) {
+.element {
+max-width: 50%;
+}
+}
+@media (min-width: 900px) {
+.element {
+max-width: 70%;
+}
+}
+      ul {
+          list-style-type: square;
+      }
+  </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -37,6 +100,9 @@
                     <a href="#skills" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Skills</a>
                   </li>
                   <li>
+                    <a href="#blogs" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blogs</a>
+                  </li>
+                  <li>
                     <a href="#certifications" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Certifications</a>
                   </li>
                 </ul>
@@ -52,6 +118,9 @@
       align-items: center;
     }
     </style>
+     <div class="tooltip w-full p-2 bg-gradient-to-r from-green-500 to-yellow-300 cursor-pointer text-white text-center">Why this website Looks So Basic ?
+        <span class="tooltiptext">Whenever I learn something new, I feel like rebuilding my portfolio with it. Keeping it simple HTML just doesn’t feel right 😄</span>
+      </div>
   <div class="background-image text-center container flex flex-col justify-center items-center">
             <h1 class="text-5xl mb-4">Hi, I'm Krishanthan</h1>
             <p class="text-lg mb-5 " style="width: 70%;">Software Engineer (U.G.) | Cybersecurity Enthusiast</p>
@@ -60,54 +129,78 @@
         <a href="https://github.com/krishanthan4">
             <img src="download.png" draggable="false" class="w-10  " alt="">
         </a>
-        <a href="https://linkedin.com/in/r-krishanthan-8a6864241/">
+        <a href="https://linkedin.com/in/ramakrishnan-krishanthan-8a6864241/">
             <img src="linkedin.png" draggable="false" class="w-10  " alt="">
         </a>
             </div>
         </div>
     </section>
-
+        
     <!-- Portfolio Section -->
     <section id="projects" class="section">
         <div class="container">
             <h2 class="text-center text-3xl mb-5">My Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+               
                 <!-- Project 1 -->
-                <div class="bg-white bg-opacity-30 p-4 rounded-lg">
-                    <a href="https://github.com/krishanthan4/Java_Student_Management_System" class="text-lg font-semibold mt-2">Student Management System</a>
-                    <p class="text-gray-500">Tech Stack : Java, Mysql</p>
-                    <p class="text-gray-500">This Project is made for a Tution class for manage student Attendence ,payment ,classes,etc</p>
+                <div class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(90, 90, 90, 0.5)), 
+                url('https://krishanthan4.github.io/edutube/public/banner.png');
+    background-size: cover;background-position: right;">
+                    <a href="https://github.com/krishanthan4/Java_Student_Management_System" class="text-xl font-semibold mt-2 text-white">Edutube - Free Courses By Youtube</a>
+                    <p class="text-gray-200 py-3">Tech Stack : NextJS | Tailwind | Zustand | Prisma | Postgres</p>
+                    <p class="text-gray-100 ">Edutube is a web app built with the YouTube API, designed as a premium-style platform for watching courses.</p>
                 </div>
-                      <!-- Project 1 -->
-                      <div class="bg-white bg-opacity-30 p-4 rounded-lg">
-                        <a href="https://github.com/krishanthan4/desktop_Shop_App" class="text-lg font-semibold mt-2">Inventory Control System</a>
-                        <p class="text-gray-500">Tech Stack : Java, Mysql</p>
-                        <p class="text-gray-500">This Project is  for a Glocerry Shop for manage Things,payment,etc</p>
-                        
+                 <!-- Project 2 -->
+                 <div class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl">
+                    <a href="https://github.com/krishanthan4/aiteacher_v01.00.00__EXPO-NextJS" class="text-xl font-semibold mt-2">AI English Teacher App</a>
+                    <p class="text-gray-500 py-3">Tech Stack : Expo | OpenAI | Langchain | Prisma | Nativewind | Zustand | Postgres</p>
+                    <p class="text-gray-500">An OpenAI Based AI English Practicing Mobile App made for my own use 😉</p>
+                </div>
+                <!-- Project 4 -->
+                <a href="https://github.com/krishanthan4/zeroaddiction_v1_EXPO-JavaEE"  class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(90, 90, 90, 0.5)), 
+                    url('https://zwyx.dev/assets/images/contribution-graph-rotated--5deg-a71e5daa065d8a87b758615f58415fb6.webp');
+        background-size: cover;background-position: center;">
+                    <p class="text-xl font-semibold mt-2 text-white">Zero Addiction - IOT Project</p>
+                    <p class="text-gray-200 py-3">Tech Stack : JavaEE | Hibernate | MySQL | Expo | Nativewind | Zustand | Arduino</p>
+                    <p class="text-gray-100">An IoT project designed to control mobile addiction, built with ESP32 and a mobile app featuring a gamified approach.</p>
+            </a>
+                      <!-- Project 5 -->
+                      <a href="https://github.com/krishanthan4/desktop_Shop_App" class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(56, 56, 56, 0.5)), 
+                      url('letschat.png');
+          background-size: cover;background-position: center;">
+                        <p class="text-xl font-semibold mt-2 text-white">Let's Chat - Messaging Mobile App</p>
+                        <p class="text-white py-3">Tech Stack : Expo | Nativewind | Zustand | JavaEE | Hibernate | MySQL</p>
+                        <p class="text-white">A Messaging Application made with chatting,Stories features.</p>
+            </a>
+                      <!-- Project 6 -->
+                      <div class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(56, 56, 56, 0.5)), 
+                      url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4SyXlRQJcxIhlB89LE_bxZkadeNBaBp2lFw&s');
+          background-size: cover;background-position: center;">
+                        <a href="https://github.com/krishanthan4/desktop_Shop_App" class="text-xl font-semibold mt-2 text-white">BeFit - E-Commerce Web App v2</a>
+                        <p class="text-gray-200 py-3">Tech Stack : NextJS | Tailwind | Zustand | JavaEE | Hibernate | MySQL</p>
+                        <p class="text-gray-100">E-Commerce Application Specially Made for 6 different Sports Items</p>
                     </div>
-                <!-- Project 2 -->
-                <div class="bg-white bg-opacity-30 p-4 rounded-lg">
-                    <a href="https://github.com/krishanthan4/e-commerce_php_tailwindcss" class="text-lg font-semibold mt-2">E-Commerce Web App</a>
-                    <p class="text-gray-500">Tech Stack : PHP,Javascript,Bootstrap,HTML,CSS</p>
-                    <p class="text-gray-500">This project made for a Mobile Shop m</p>
+                <!-- Project 7 -->
+                <div class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXawrBK-po-bzw9LgoRUC_VbDMfdU9DKUhfw&s');
+    background-size: cover;background-position: center; backdrop-filter: 3px;">
+                    <a href="https://github.com/krishanthan4/desktop_Shop_App" class="text-xl font-semibold mt-2">BeFit - E-Commerce Web App v1</a>
+                    <p class="text-gray-900 font-semibold py-3">Tech Stack : HTML | JS | Tailwind | PHP | MySQL</p>
+                    <p class="text-white">E-Commerce Application Made with PHP, MySQL .</p>
                 </div>
-                <!-- Project 3 -->
-                <div class="bg-white bg-opacity-30 p-4 rounded-lg">
-                    <a href="https://github.com/krishanthan4/react-chat-original" class="text-lg font-semibold mt-2">Mobile Chat Application</a>
-                    <p class="text-gray-500">Tech Stack : React Native,PHP,Javascript / Typescript,CSS</p>
-                    <p class="text-gray-500">This is a Cross Plateform Chat application which is made for android and IOS </p>
+                 <!-- Project 8 -->
+                 <div class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(180, 180, 180, 0.5)), 
+                 url('https://krishanthan4.github.io/edutube/public/post.jpg');
+     background-size: cover;background-position: center;">
+                    <a href="https://github.com/krishanthan4/desktop_Shop_App" class="text-lg font-semibold mt-2 text-white">Ethical Hacking RoadMap</a>
+                    <p class="text-gray-200 pt-5">Roadmap created to self learn CyberSecurity</p>
                 </div>
-                    <!-- Project 5 -->
-                <div class="bg-white bg-opacity-30 p-4 rounded-lg">
-                    <a href="https://github.com/krishanthan4/react-chat-original" class="text-lg font-semibold mt-2">Software Company Website</a>
-                    <p class="text-gray-500">Tech Stack : Next JS ,Tailwindcss</p>
-                    <p class="text-gray-500">This is a software company website made for a startup</p>
-                </div>
-                     <!-- Project 6 -->
-                <div class="bg-white bg-opacity-30 p-4 rounded-lg">
-                    <a href="https://github.com/krishanthan4/react-chat-original" class="text-lg font-semibold mt-2">Bash Scripts for Chrome Under Control</a>
-                    <p class="text-gray-500">Tech Stack : Bash</p>
-                    <p class="text-gray-500">this script can disable incognito mode ,block adding profiles and disable guest mode in chrome browser , Linux</p>
+                 <!-- Project 9 -->
+                 <div class="bg-white bg-opacity-30 p-4 rounded-lg shadow-xl" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(180, 180, 180, 0.5)), 
+                 url('https://akm-img-a-in.tosshub.com/sites/visualstory/stories/2023_03/story_26409/assets/1.jpeg?time=1678872838&size=*:900');
+     background-size: cover;background-position: center;">
+                    <a href="https://github.com/krishanthan4/desktop_Shop_App" class="text-lg font-semibold mt-2 text-white">Cyber Security Beginner Course</a>
+                    <p class="text-gray-200 py-3">Cyber Security Beginner Course organized with already available things.this will cover Linux,Networking and more.</p>
                 </div>
             </div>
         </div>
@@ -122,27 +215,14 @@
                 <!-- Skill 2 -->
                 <div class="bg-white bg-opacity-30 p-4 w-fit  rounded-lg">
                     <i class="fa fa-terminal text-5xl mb-3"></i>
-                    <h3 class="text-xl font-semibold mb-2">Cyber Security</h3>
-                
-                    <style>
-                        @media (min-width: 1300px) {
-            .element {
-                max-width: 50%;
-            }
-        }
-        @media (min-width: 900px) {
-            .element {
-                max-width: 70%;
-            }
-        }
-                        ul {
-                            list-style-type: square;
-                        }
-                    </style>
-                    <ul style="padding-left: 40px;">
+                    <h3 class="tooltip2 w-full text-xl font-semibold mb-2 cursor-pointer">Bug Bounty Hunting
+                        <span class="tooltiptext2">Gobuster | FFUF | Rustscan | Burp Suite | ZAP , and more</span>
+                    </h3>
+                    <ul style="padding-left: 40px;" class="tooltip2 cursor-pointer">
                         <li>Bug Bounty Hunting</li>
                         <li>Network and Web Pentesting</li>
                         <li>API Testing</li>
+                        <span class="tooltiptext2">check the title ☝️</span>
                     </ul>
                 </div>
            
@@ -155,17 +235,31 @@
                         }
                     </style>
                     <ul style="padding-left: 40px;">
-                        <li>Web Application Development</li>
-                        <li>Mobile Application Development</li>
-                        <li>Desktop Application Development</li>
+                        <li class="tooltip2 w-full cursor-pointer">Web Application Development
+                            <span class="tooltiptext2">Next JS | Prisma | Hibernate | MySQL | Postgres | Tailwindcss | Zustand | Springboot | MERN | JavaEE</span>
+                        </li>
+                        <li class="tooltip2 w-full cursor-pointer">Mobile Application Development
+                            <span class="tooltiptext2">Expo (React Native)</span>
+                        </li>
+                        <li class="tooltip2 w-full cursor-pointer">Desktop Application Development
+                            <span class="tooltiptext2">Swing | Java</span>
+                        </li>
                     </ul>
                 </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Blogs Section -->
+     <section class="section bg-white" id="blogs">
+        <div class="container">
+            <h2 class="text-center text-3xl mb-5">My Blogs</h2>
+                <iframe src='https://widgets.sociablekit.com/medium-publication-feed/iframe/25488659' frameborder='0' width='100%' height='1000'></iframe>
+        </div>
+     </section>
     <!-- Certifications Section -->
-    <section id="certifications" class="section">
+    <section id="certifications" class="section hidden">
         <div class="container">
             <h2 class="text-center text-3xl mb-5">Certifications</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -195,10 +289,11 @@
     <footer class=" text-black bg-gray-200 py-1">
         <div class="container">
             <div class="text-center">
-                <p>&copy; 2023 SprinSec Technologies. All Rights Reserved.</p>
+                <p>&copy; Krishanthan. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+    <script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
 </body>
 
 </html>
