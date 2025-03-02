@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+
     // Dark theme toggle logic
     const themeToggle = document.querySelector('.theme-toggle');
     themeToggle.addEventListener('click', function() {
@@ -32,6 +33,93 @@ document.addEventListener("DOMContentLoaded", function() {
         navLinks.classList.toggle('open');
         hamburger.classList.toggle('toggle');
     });
+
+    const toastContainer = document.getElementById('toast-container');
+    
+    // Function to create and show a toast
+    function showToast() {
+      // Create toast elements
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      
+      const toastBorder = document.createElement('div');
+      toastBorder.className = 'toast-border';
+      
+      const toastContent = document.createElement('div');
+      toastContent.className = 'toast-content';
+      
+      const toastHeader = document.createElement('div');
+      toastHeader.className = 'toast-header';
+      
+      const toastTitle = document.createElement('h3');
+      toastTitle.className = 'toast-title';
+      toastTitle.textContent = 'Why this website Looks So Basic?';
+      
+      const toastClose = document.createElement('div');
+      toastClose.className = 'toast-close';
+      toastClose.textContent = '×';
+      
+      const toastMessage = document.createElement('p');
+      toastMessage.className = 'toast-message';
+      toastMessage.innerHTML = 'Whenever I learn something new, I feel like rebuilding my portfolio with it. Keeping it simple HTML just doesn\'t feel right <span class="emoji-icon">😄</span>';
+      
+      const toastProgress = document.createElement('div');
+      toastProgress.className = 'toast-progress';
+      
+      // Assemble the toast
+      toastHeader.appendChild(toastTitle);
+      toastHeader.appendChild(toastClose);
+      
+      toastContent.appendChild(toastHeader);
+      toastContent.appendChild(toastMessage);
+      
+      toast.appendChild(toastBorder);
+      toast.appendChild(toastContent);
+      toast.appendChild(toastProgress);
+      
+      // Add toast to container
+      toastContainer.appendChild(toast);
+      
+      // Show with animation
+      setTimeout(() => {
+        toast.classList.add('show');
+      }, 10);
+      
+      // Animate progress bar
+      toastProgress.animate(
+        [
+          { transform: 'scaleX(1)' },
+          { transform: 'scaleX(0)' }
+        ],
+        {
+          duration: 5000,
+          easing: 'linear',
+          fill: 'forwards'
+        }
+      );
+      
+      // Auto dismiss after 5 seconds
+      const dismissTimeout = setTimeout(() => {
+        dismissToast(toast);
+      }, 5000);
+      
+      // Close button event
+      toastClose.addEventListener('click', () => {
+        clearTimeout(dismissTimeout);
+        dismissToast(toast);
+      });
+      
+      // Function to dismiss toast
+      function dismissToast(toastElement) {
+        toastElement.classList.remove('show');
+        setTimeout(() => {
+          toastContainer.removeChild(toastElement);
+        }, 400);
+      }
+    }
+    
+    setTimeout(showToast, 1000);
+
 });
 
 
@@ -61,4 +149,3 @@ document.addEventListener("DOMContentLoaded", function() {
           container.appendChild(particle);
         }
       }
-      
