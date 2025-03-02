@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
   <link rel="stylesheet" href="style.css"/>
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="contactStyle.css"/>
 </head>
-<body>
+<body class="max-w-screen overflow-x-hidden max-h-screen">
     <!-- Loading Screen -->
-    <div class="loader">
+    <div class="loader max-w-screen">
         <div class="loader-dots flex">
             <div></div>
             <div></div>
@@ -23,20 +23,20 @@
     </div>
 
     <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
+    <div class="custom-cursor max-w-screen"></div>
 
     <!-- Scroll Progress Bar -->
-    <div class="progress-animation">
+    <div class="progress-animation max-w-screen">
         <div class="progress-bar"></div>
     </div>
 
     <!-- Theme Toggle -->
-    <div class="theme-toggle">
+    <div class="theme-toggle max-w-screen">
         <i class="fas fa-moon"></i>
     </div>
 
     <!-- Header/Navbar -->
-    <header class="fixed w-full card-custom shadow-md z-50 transition duration-300">
+    <header class="fixed max-w-screen  w-full card-custom shadow-md z-50 transition duration-300">
         <div class="container mx-auto px-6 py-3">
             <div class="flex justify-between items-center">
                 <div class="text-2xl font-bold text-gray-custom">
@@ -47,7 +47,7 @@
                 </div>
                 
                 <nav>
-                    <ul class="nav-links hidden md:flex space-x-8 items-center">
+                    <ul class="nav-links flex md:flex-row flex-col flex space-x-8 items-center">
                         <li><a href="#home" class="hover:text-gray-custom transition duration-300">Home</a></li>
                         <li><a href="#about" class="hover:text-gray-custom transition duration-300">About</a></li>
                         <li><a href="#skills" class="hover:text-gray-custom transition duration-300">Skills</a></li>
@@ -67,7 +67,8 @@
             </div>
         </div>
     </header>
-    </div>
+
+
     <div class="toast-container" id="toast-container"></div>
 
     <!-- Hero Section -->
@@ -80,7 +81,9 @@
             <div class="flex flex-col-reverse md:flex-row items-center justify-between">
                 <div class="md:w-2/3 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
                     <p class="text-gray-custom font-medium mb-4">Hello, I'm</p>
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 typing-text">Krishanthan</h1>
+                        <h1 class="text-5xl md:text-6xl font-bold mb-6">Krishanthan&nbsp;&nbsp;
+                            <span class="typing-text"></span>
+                        </h1>
                     <h2 class="text-2xl md:text-3xl font-light mb-8">Software Developer</h2>
                     <p class="text-gray-custom mb-8 max-w-lg mx-auto md:mx-0">I build innovative software solutions. Let's create secure and impactful digital experiences together.</p>
                     
@@ -126,8 +129,8 @@
             <div class="flex flex-col md:flex-row items-center space-y-12 md:space-y-0">
                 <div class="md:w-5/12" data-aos="fade-right" data-aos-duration="1000">
                     <div class="relative">
-                        <div class="absolute inset-0 bg-gray-600 rounded-lg transform rotate-3"></div>
-                        <img src="photo2.jpeg" alt="About Me" class="relative rounded-lg card-3d">
+                        <img src="photo2.jpeg" alt="About Me" class="card-3d shadow-lg absolute shadow-gray-600 inset-0 bg-gray-600 rounded-lg transform rotate-3">
+                        <img src="photo2.jpeg" alt="About Me" class="relative rounded-lg shadow-lg shadow-gray-600 card-3d">
                     </div>
                 </div>
                 
@@ -165,15 +168,15 @@
             <!-- Stats -->
             <div class="grid grid-cols-3  gap-6 mt-20">
                 <div class="card-custom rounded-lg p-6 shadow-lg text-center transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="stats-counter mb-2">20+</div>
+                    <div class="mb-2 text-3xl text-4xl font-bold">20+</div>
                     <p class="text-gray-custom">Projects Completed</p>
                 </div>
                 <div class="card-custom rounded-lg p-6 shadow-lg text-center transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="stats-counter mb-2">15+</div>
+                    <div class="mb-2 text-3xl md:text-4xl font-bold">15+</div>
                     <p class="text-gray-custom">Technologies Mastered</p>
                 </div>
                 <div class="card-custom rounded-lg p-6 shadow-lg text-center transform hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="stats-counter mb-2">100+</div>
+                    <div class="mb-2 text-3xl md:text-4xl font-bold">100+</div>
                     <p class="text-gray-custom">Cups of Coffee</p>
                 </div>
             </div>
@@ -644,7 +647,7 @@
     </section>
 <!-- Contact Form -->
     
-<div id="contact" data-aos="fade-left" data-aos-duration="1000">
+<div id="contact" class="max-w-screen" data-aos="fade-left" data-aos-duration="1000">
     <section class="contact-section">
         <div class="floating-particles" id="particles"></div>
         
@@ -691,7 +694,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 <script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script> -->
 <script src="script.js"></script>
 <script>
 AOS.init();
