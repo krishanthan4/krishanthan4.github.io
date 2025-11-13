@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
     
-    setTimeout(showToast, 1000);
+    setTimeout(showToast, 2000);
 
 });
 
