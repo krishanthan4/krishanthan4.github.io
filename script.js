@@ -123,29 +123,67 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-    // Create floating particles
+    // Optimize scroll performance
+    let ticking = false;
+    function updateScrollProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = scrollTop / docHeight;
+        
+        const progressBar = document.querySelector('.progress-bar');
+        if (progressBar) {
+            progressBar.style.width = (scrollPercent * 100) + '%';
+        }
+        
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollProgress);
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Create floating particles for contact section
     function createParticles() {
         const container = document.getElementById('particles');
+        if (!container) return;
+        
         const colors = ['#6366f1', '#a855f7', '#ec4899', '#f0abfc', '#c4b5fd'];
         
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 15; i++) {
           const particle = document.createElement('div');
           particle.className = 'particle';
           
-          const size = Math.random() * 40 + 10;
+          const size = Math.random() * 30 + 5;
           const color = colors[Math.floor(Math.random() * colors.length)];
           
           particle.style.width = `${size}px`;
           particle.style.height = `${size}px`;
           particle.style.background = color;
-          particle.style.opacity = Math.random() * 0.1 + 0.05;
+          particle.style.opacity = Math.random() * 0.1 + 0.03;
           
           particle.style.left = `${Math.random() * 100}%`;
           particle.style.top = `${Math.random() * 100}%`;
           
           particle.style.animationDelay = `${Math.random() * 5}s`;
-          particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+          particle.style.animationDuration = `${Math.random() * 20 + 15}s`;
           
           container.appendChild(particle);
         }
-      }
+    }
+    
+    // Initialize contact particles when section is in view
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    createParticles();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        observer.observe(contactSection);
+    }
